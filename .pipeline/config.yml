@@ -13,6 +13,7 @@
 ### General project setup
 general:
   inferBuildTool: true
+  productiveBranch: 'master'
 
 ### Step-specific configuration
 steps:
@@ -32,11 +33,11 @@ stages:
 #      - alias: 'mySystemAlias'
 #        credentialId: 'mySystemCredentialsId'
 
-  Release:
+  productionDeployment:
     cfTargets:
       - org: '86e2224btrial'
         space: 'dev'
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-        appName: 'cicdtes'
+        appName: 'sapcicd'
         manifest: 'manifest.yml'
-        credentialsId: 'myDeploymentCredentialsId'
+        credentialsId: 'cf-dev'
